@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="250" viewBox="0 0 1000 250">
+    <defs>
+        <filter id="text_shadow">
+            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.2">
+
+            </feDropShadow>
+        </filter>
+    </defs>
+
+    <text
+        x="0" y="100"
+        dy="0" dx="20"
+        fill="#ffffff"
+        font-size= "100"
+        font-family="'Black Han Sans', sans-serif"
+        font-weight ="bolder"
+        letter-spacing="5"
+        filter="url(#text_shadow)"
+        class="text__select--none"
+    >
+    WEB PUBLISHER
+        <tspan dy="100" dx="-830" fill="#fff">
+            PORTFOLIO
+        </tspan>
+    </text>
+</svg>
+

@@ -1,0 +1,24 @@
+@use './variables/variables' as let;
+
+#layer_01 {
+    width: 100vw;
+    height: 100vh;
+}
+
+.text__select {
+    &--none {
+        @include let.auto-prefix(let.$prefix-default, user-select, none);
+        user-select: none;
+    }
+}
+
+#group {
+    &__title {
+        font-family: "Black Han Sans", sans-serif;
+        font-size: 100px;
+
+        fill: #fff;
+        filter: url(#object__shadow);
+        
+    }
+}

@@ -1,0 +1,91 @@
+@use './variables/variables' as let;
+
+#header__layout {
+    width: inherit;
+    height: inherit;
+}
+
+.header {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+
+    // 배경설정
+    &__background {
+        &--day {
+            background: linear-gradient(180deg, #2980b9, #6dd5fa, #ffffff);
+            background-attachment: scroll;
+        }
+    }
+
+    &__wrap {
+        width: map-get($map: let.$screen-breakpoint1, $key: "page-width");
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+    &__title {
+        position: absolute;
+
+        top: 20rem;
+        left: 50%;
+
+        transform-origin: center;
+        transform: translate(-50%, 0) rotateX(0deg);
+        transition: all 1s cubic-bezier(0.63, 0.03, 0.95, 1.43);
+    }
+    // SVG
+    &__svg {
+        position: absolute;
+
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    &__bottom {
+        position: absolute;
+        width: 100vw;
+        height: 400px;
+        bottom: -20rem;
+        background: url("../images/dirt1.svg");
+    }
+    // 물과 만나는 경계선 옅게 하기
+    &__line {
+        position: absolute;
+        bottom: -25rem;
+
+        width: 100vw;
+        height: 100px;
+
+        background: linear-gradient(
+            180deg,
+            rgba(233, 196, 129, 1),
+            rgba(222, 177, 108, 1),
+            rgb(204, 176, 114, 1)
+        );
+        filter: blur(2px);
+
+        border-radius: 25%;
+    }
+
+    &__ball {
+        position: absolute;
+        right: 50px;
+        bottom: -20rem;
+        z-index: 10;
+        transform: scale(1);
+        transition: transform 0.5s ease;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    &__tree {
+        position: absolute;
+        left: 20px;
+        bottom: -10rem;
+        z-index: 0;
+    }
+}

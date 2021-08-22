@@ -1,0 +1,54 @@
+<svg version="1.1" id="layer_01" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- 렌더링 하지 않음 -->
+            <defs>
+                <!-- 그라데이션 스카이 -->
+                <linearGradient id="gradient__sky" x1="0.5" y1="0" x2="0.5" y2="1">
+                    <stop offset="0%" stop-color="#2980B9" stop-opacity="1" />
+                    <stop offset="50%" stop-color="#6DD5FA" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+                </linearGradient>
+
+                <filter id="object__shadow">
+                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.2">
+
+                    </feDropShadow>
+                </filter>
+            </defs>
+
+            <!-- 구름 symbol -->
+            <symbol viewBox="0 0 150 150" preserveAspectRatio="xMidYMid slice">
+                <g id="group__cloude" transform="translate(0,0) scale(1)">
+                    <ellipse cx="43" cy="43" rx="29" ry="30" fill="rgb(255, 255, 255)" />
+                    <ellipse cx="68.5" cy="45.5" rx="25.5" ry="25.5" fill="rgb(255, 255, 255)" />
+                    <ellipse fill="rgb(255, 255, 255)" cx="98" cy="50" rx="27" ry="24" />
+                </g>
+            </symbol>
+
+
+            <symbol>
+                <g id="group__title">
+                    <text class="text__select--none">
+                        WEB PUBLISHER
+                        <tspan dy="100" dx="-720">
+                            PORTFOLIO
+                        </tspan>
+                    </text>
+                </g>
+            </symbol>
+
+            <!-- 배경 설정 -->
+            <rect fill=" url(#gradient__sky)" x="0" y="0" width="100vw" height="1080" />
+
+            <!-- 구름 등장 -->
+            <use xlink:href="#group__cloude" x="300" y="200" />
+            <use xlink:href="#group__cloude" x="500" y="60" transform="scale(1.25)" />
+            <use xlink:href="#group__cloude" x="400" y="320" />
+            <use xlink:href="#group__cloude" x="1000" y="100" />
+            <use xlink:href="#group__cloude" x="1400" y="150" />
+            <use xlink:href="#group__title" x="0" y="0" />
+        </svg>
+
+        <!-- <h1 class="header__title">
+            <!-- <object data="./src/images/title.svg"></object> -->
+        <img src="./src/images/title.svg" alt="title">
+        </h1> -->

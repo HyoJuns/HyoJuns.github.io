@@ -1,64 +1,74 @@
-@function SizeSet($size, $padding : 0, $marign : 0)
-{
+@function SizeSet($size, $padding: 0, $marign: 0) {
     @return calc($size - (($padding * 2) + ($marign * 2)));
 }
 
+// 디버그 함수
+$debugStart: false;
 
 // 레이아웃 변수
 
-$default-margin : 8px;
-$default-gutter : 16px;
+$default-margin: 8px;
+$default-gutter: 16px;
 
-$screen-breakpoint1 : (
-    'page-width' : 1440px,
-    'margin-width' : $default-margin,
-    'gutter-width' : $default-gutter,
-    'column-width' : 104px
-
+$screen-breakpoint1: (
+    "page-width": 1440px,
+    "margin-width": $default-margin,
+    "gutter-width": $default-gutter,
+    "column-width": 104px,
 );
-$screen-breakpoint2 : (
-    'page-width' : 1248px,
-    'margin-width': $default-margin,
-    'gutter-width' : $default-gutter,
-    'column-width' : 88px
+$screen-breakpoint2: (
+    "page-width": 1248px,
+    "margin-width": $default-margin,
+    "gutter-width": $default-gutter,
+    "column-width": 88px,
 );
-$screen-breakpoint3 : (
-    'page-width' : 960px,
-    'margin-width' : $default-margin / 2,
-    'gutter-width' : $default-gutter / 2,
-    'column-width' : 72px
+$screen-breakpoint3: (
+    "page-width": 960px,
+    "margin-width": $default-margin / 2,
+    "gutter-width": $default-gutter / 2,
+    "column-width": 72px,
 );
 // 타블렛 6 칼럼
-$screen-breakpoint4 : (
-    'page-width' : 720px,
-    'margin-width' : $default-margin,
-    'gutter-width' : $default-gutter,
-    'column-width' : 104px
+$screen-breakpoint4: (
+    "page-width": 720px,
+    "margin-width": $default-margin,
+    "gutter-width": $default-gutter,
+    "column-width": 104px,
 );
 
 // 모바일 4칼럼
-$screen-breakpoint5 : (
-    'page-width' : 320px,
-    'margin-width' : $default-margin,
-    'gutter-width' : $default-gutter,
-    'column-width' : 64px
+$screen-breakpoint5: (
+    "page-width": 320px,
+    "margin-width": $default-margin,
+    "gutter-width": $default-gutter,
+    "column-width": 64px,
 );
 
-
-
-
-
-
 // Prefix-list
-$prefix-default : webkit, moz, ms, o;
+$prefix-default: webkit, moz, ms, o;
 
 // 자동으로 prefix 구현한다.
 // auto-prefix (list, cssName, Value)
-@mixin auto-prefix($prefix-list, $css_name, $value)
-{
+@mixin auto-prefix($prefix-list, $css_name, $value) {
     // webkit, moz, ms, o 차례데로 받아온다.
-    @each $prefix in $prefix-list
-    {
-        -#{$prefix}-#{$css_name} : $value;
+    @each $prefix in $prefix-list {
+        -#{$prefix}-#{$css_name}: $value;
+    }
+}
+
+// wrap Setting
+@mixin auto-wrapper($size) {
+    width: map-get($map: $size, $key: "page-width");
+    height: inherit;
+
+    margin: 0 auto;
+}
+
+// 디버그
+@mixin debug($color) {
+    @if $debugStart == true {
+        outline: 3px solid $color;
+    } @else {
+        outline: none;
     }
 }
