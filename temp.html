@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/images/favicon.ico">
+    <!-- font 불러오기-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Style 불러오기 -->
+    <link rel="stylesheet" href="./src/css/index.css">
+
+    <!-- 스크립트 불러오기 -->
+    <script src="./src/scripts/jquery-3.6.0.min.js" defer></script>
+    <script src="./src/scripts/snap.svg-min.js" defer></script>
+    <!-- Lodash 의 타이머 -->
+    <script src="./src/scripts/lodash.min.js" defer></script>
+
+
+    <script src="./src/scripts/stack.js"></script>
+    <script src="./src/scripts/main.js" defer></script>
+
+    <!--
+        font-family: 'Black Han Sans', sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
+
+     -->
+</head>
+
+<body>
+    <header class="header header__background header__background--day">
+
+        <svg class="header__svg">
+            <desc>구름 및 나무, 비치볼</desc>
+            <defs>
+                <g id="cloude">
+                    <ellipse cx="41.5" , cy="49.5" , rx="31" , ry="29"></ellipse>
+                    <ellipse cx="68.5" , cy="51.5" , rx="25.5" , ry="25.5"></ellipse>
+                    <ellipse cx="100" , cy="47" , rx="26.4" , ry="24"></ellipse>
+                </g>
+            </defs>
+
+            <use x="104vw" y="100" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+            <use x="120vw" y="50" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+            <use x="225vw" y="22" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+            <use x="200vw" y="250" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+            <use x="313vw" y="400" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+            <use x="313vw" y="320" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+            <use x="413vw" y="360" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+            <use x="413vw" y="220" xlink:href="#cloude" fill="#ffffff" class="svg__cloude">
+            </use>
+        </svg> <!-- 배경 -->
+        <img src="./src/images/bitchball.png" alt="bitchball" class="header__ball">
+
+
+        <div class="header__bottom"></div>
+        <div class="header__line"></div>
+        <img src="./src/images/tree.png" alt="Tree" class="header__tree">
+
+        <div class="header__wrap">
+            <h1 class="header__title">
+                <img src="/src/images/title.svg" alt="Title">
+            </h1>
+        </div>
+    </header>
+    <section class="section section__background section__background--day">
+        <div class="section__wrap">
+            <div class="section__wrap--page1">
+                <svg class="about__svg">
+                    <desc>
+                        물방울
+                    </desc>
+                    <defs>
+                        <g id="water">
+                            <circle cx="83" cy="83" r="81" fill="#C4C4C4" fill-opacity="0.25" stroke="white"
+                                stroke-width="4" />
+                            <path
+                                d="M152.48 57.5C155.618 70.8901 161.716 87.5 149.842 87.5C137.968 87.5 145.48 78.3901 132.342 57.5C118.437 35.3901 107.106 21 118.98 21C130.854 21 143.98 42.5 152.48 57.5Z"
+                                fill="white" />
+                            <circle cx="143" cy="107" r="8" fill="white" />
+                        </g>
+                        <g id="water2">
+                            <circle cx="53.5" cy="53.5" r="51.5" fill="#C4C4C4" fill-opacity="0.25" stroke="white"
+                                stroke-width="4" />
+                            <path
+                                d="M98.2853 37.0632C100.308 45.6942 104.239 56.4006 96.5848 56.4006C88.931 56.4006 93.7733 50.5286 85.3047 37.0632C76.3417 22.8117 69.0382 13.5361 76.692 13.5361C84.3458 13.5361 92.8064 27.3946 98.2853 37.0632Z"
+                                fill="white" />
+                            <ellipse cx="92.1747" cy="68.9699" rx="5.15663" ry="5.15663" fill="white" />
+                        </g>
+                        <g id="water3">
+                            <circle cx="32" cy="32" r="30" fill="#C4C4C4" fill-opacity="0.25" stroke="white"
+                                stroke-width="4" />
+                            <path
+                                d="M7.82821 20.6146C10.4619 16.0125 13.1067 9.72441 16.4564 12.8449C19.8061 15.9654 15.2928 16.5611 13.5092 25.9069C11.6214 35.7983 11.0361 42.8354 7.68638 39.7149C4.33671 36.5944 6.28408 27.0798 7.82821 20.6146Z"
+                                fill="white" />
+                            <ellipse cx="14.0843" cy="45.0843" rx="3.08434" ry="3.08434" fill="white" />
+                        </g>
+                    </defs>
+
+                    <use x="050" y="100" xlink:href="#water" class="svg__water"></use>
+                    <use x="250" y="300" xlink:href="#water2" class="svg__water svg__water--small"></use>
+                    <use x="150" y="400" xlink:href="#water3" class="svg__water"></use>
+                </svg>
+                <div class="section__movebox">
+                    <h2 class="section__title">
+                        about
+                    </h2>
+                    <h3 class="section__subtitle">
+                        "호기심이 많고 맡은 일을 포기하지 않고 도전하는<br>
+                        신입 웹 퍼블리셔 박효준입니다."
+                    </h3>
+                    <p class="section__paragraph">
+                        저는 학원과 인강으로 지식을 쌓으며, 앞으로 나아가며 웹페이지를 제작했습니다.<br>
+                        웹에 대해 배운 시간은 4~5개월 정도 되지만 많은 시행착오와 난관을 겪고 배우며 성장하겠습니다.
+                    </p>
+                    <p class="section__paragraph">
+                        2021. 02. 24<br>
+                        춘천 한림대학교 졸업
+                    </p>
+                    <p class="section__paragraph">
+                        2021. 04. 08 ~ 2021. 08. 26<br>
+                        김포이젠아카데미 학원 웹과정 이수
+                    </p>
+                </div>
+
+            </div>
+            <div class="section__wrap--page2">
+                <img src="./src/images/jellyfish.svg" alt="해파리" class="svg__jellyfish">
+                <div class="section__movebox">
+                    <h2 class="section__title section__title--left">
+                        skill
+                    </h2>
+
+                    <div class="card__container">
+                        <div class="card">
+                            <h3 class="card__title">
+                                HMTL
+                            </h3>
+                            <figure class="card__image">
+                                <img src="./src/images/html5.png" alt="html5">
+                            </figure>
+                            <p class="card__description">
+                                남들 하는 만큼 합니다.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card__title">
+                                CSS
+                            </h3>
+                            <figure class="card__image">
+                                <img src="./src/images/css.png" alt="css">
+                            </figure>
+                            <p class="card__description">
+                                SCSS 사용 가능합니다.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3 class="card__title">
+                                JavaScript
+                            </h3>
+                            <figure class="card__image">
+                                <img src="./src/images/javascript.png" alt="javascript">
+                            </figure>
+                            <p class="card__description">
+                                Jquery 사용 가능합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="section__wrap--page3">
+                <img src="./src/images/fish.svg" alt="fish" class="svg__fish">
+                <div class="section__movebox">
+                    <h2 class="section__title">
+                        portfolio
+                    </h2>
+                </div>
+
+            </div>
+            <div class="section__wrap--page4">
+                <h2 class="section__title section__title--left">
+                    Thank you
+                </h2>
+                <h3 class="section__subtitle section__subtitle--left
+                section__subtitle--large">
+                    박효준
+                </h3>
+                <p class="section__paragraph section__paragraph--left section__paragraph--bold">
+                    Email : gywns1720@naver.com
+                </p>
+                <p class="section__paragraph section__paragraph--left section__paragraph--bold">
+                    Phone : 010 - 3873 - 5405
+                </p>
+                <p class="section__paragraph section__paragraph--left section__paragraph--bold">
+                    Github : <a href="https://github.com/HyoJuns?tab=repositories">
+                        들어가기
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,218 +1,191 @@
-@use './variables/variables' as let;
 
-.section {
-    width: 100vw;
-    height: 5500px;
+$section-gradient-a : #6BA88E;
+$section-gradient-b : #079695;
+$section-gradient-c : #097581;
+$section-gradient-d : #025058;
+
+$color : #FCFFE9;
+
+.section
+{
     min-height: 100vh;
-    // padding-top: 50rem;
+    background: linear-gradient(180deg, $section-gradient-a, $section-gradient-b, $section-gradient-c, $section-gradient-d);
 
-    // 배경설정
-    &__background {
-        &--day {
-            background: linear-gradient(
-                180deg,
-                #deb16c,
-                #6ba88e,
-                #6ba88e,
-                #079695,
-                #097581,
-                #025058
-            );
-        }
-    }
-    &__movebox {
-        transform: translateX(200px);
-        opacity: 0.2;
-        transition: all 0.5s ease;
-    }
-    &__wrap {
-        width: map-get($map: let.$screen-breakpoint1, $key: "page-width");
-        margin: 0 auto;
-        display: grid;
-        height: inherit;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 500px repeat(3, 1fr);
-        grid-template-areas:
-            "about about"
-            "skill skill"
-            "portfolio portfolio"
-            "footer footer";
-        position: relative;
+    // 각 목차 타이틀
+    &__title
+    {
+        padding-top: 2em;
+        text-align: center;
 
-        padding-top: 100rem;
-        gap: 90rem;
-
-        &--page {
-            &1 {
-                position: relative;
-                // supports 지원 안 할시
-                height: 10%;
-
-                @supports (display: grid) {
-                    height: 100%;
-                }
-
-                @supports not (display: grid) {
-                    height: 10%;
-                }
-
-                @include let.debug(#fa8c42);
-
-                grid-area: about;
-
-                // margin-top: 100rem;
-            }
-
-            &2 {
-                position: relative;
-                // supports 지원 안 할시
-                height: 40%;
-                // margin-top: 150rem;
-                @supports (display: grid) {
-                    height: 100%;
-                }
-
-                @supports not (display: grid) {
-                    height: 40%;
-                }
-
-                @include let.debug(#fa8c42);
-
-                grid-area: skill;
-            }
-            &3 {
-                position: relative;
-                // supports 지원 안 할시
-                height: 40%;
-                // margin-top: 150rem;
-                @supports (display: grid) {
-                    height: 100%;
-                }
-
-                @supports not (display: grid) {
-                    height: 40%;
-                }
-
-                @include let.debug(#fa8c42);
-
-                grid-area: portfolio;
-            }
-            &4 {
-                position: relative;
-                // supports 지원 안 할시
-                height: 10%;
-                // margin-top: 150rem;
-                @supports (display: grid) {
-                    height: 100%;
-                }
-
-                @supports not (display: grid) {
-                    height: 10%;
-                }
-
-                @include let.debug(#fa8c42);
-
-                grid-area: footer;
-            }
-        }
-    }
-
-    &__title {
-        font-family: "Black Han Sans", sans-serif;
-        font-size: 6rem;
-        text-align: right;
-
+        font-size: 3vmax;
         text-transform: uppercase;
-        letter-spacing: 0.5rem;
-        text-shadow: 1px 1px 2px #444;
-        mix-blend-mode: screen;
-        color: #fff;
-        &--left {
-            text-align: left;
-        }
+        font-weight: 900;
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 20px $section-gradient-a, 3px 3px 10px #fff;
+        user-select: none;
     }
-    &__subtitle {
-        margin-top: 1.6rem;
-        font-size: 2.4rem;
-        text-align: right;
-        line-height: 1.3;
 
-        color: #fff;
-        font-weight: 400;
-        text-shadow: 1px 1px 2px #444;
-        &--left {
-            text-align: left;
-        }
-        &--large {
-            font-size: 3.4rem;
-        }
-    }
-    &__paragraph {
-        margin-top: 1.6rem;
-        text-align: right;
-        font-size: 1.6rem;
-        color: #fff;
+    &__desc
+    {
+        padding-top: 2em;
+        text-align: center;
+        font-size: 1.5vmax;
+        letter-spacing: 2px;
         line-height: 1.5;
 
-        text-shadow: 1px 1px 2px #444;
-
-        &--left {
+        & strong
+        {
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+        & a
+        {
+            color: inherit;
+            text-decoration: none;
+        }
+        &--left
+        {
             text-align: left;
         }
-        &--bold {
-            font-weight: bold;
+    }
+}
+
+// article common
+.about, .skill, .portfolio, .thankyou
+{
+    height: 100vh;
+    min-height: 700px;
+    &__wrap
+    {
+        width: 90vmax;
+        height: 100%;
+        margin : 0 auto;
+
+        outline: 1px solid #fff;
+    }
+}
+
+// Skill
+.skill
+{
+    // 컨테이너
+    &__container
+    {
+        margin-top: 2em;
+
+        width: 100%;
+        height: 400px;
+
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        outline: 1px solid yellow;
+    }
+
+    &__card
+    {
+        outline: 1px solid red;
+        width: 30%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap : 2rem;
+    }
+
+    &__Image
+    {
+        vertical-align: middle;
+        object-fit: cover;
+    }
+    &__desc
+    {
+        width: 80%;
+        font-size: 1.5vmin;
+        line-height: 1.5;
+    }
+}
+
+.portfolio
+{
+    &__mainContainer
+    {
+        margin-top: 4rem;
+        display: flex;
+
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        gap : 1rem;
+    }
+
+    &__main
+    {
+        width: calc(55% - .5rem);
+        height: 400px;
+
+        outline: 1px solid lemonchiffon;
+    }
+
+    &__textContainer
+    {
+        width: calc(45% - 1rem);
+        height: 400px;
+
+        outline: 1px solid blueviolet;
+    }
+    &__subContainer
+    {
+        width: 100%;
+        height: 200px;
+        outline: brown;
+    }
+
+    // 텍스트 속성
+    &__title
+    {
+        font-size: 1.8vmax;
+        letter-spacing: 1.5px;
+        & > strong
+        {
+            font-size: 1.5em;
+            font-weight: 900;
         }
-        & > a {
-            text-decoration: none;
-            color: inherit;
-        }
+    }
+    &__subtitle
+    {
+        font-size: 1.5vmax;
+        letter-spacing: 1.5px;
+    }
+    &__desc
+    {
+        width: 100%;
+        margin-top: 2em;
+        font-size: 1.5vmax;
+        line-height: 2;
+    }
+
+    &__useskils
+    {
+        font-size: 1.2vmax;
+        margin-top: 2em;
+        margin-left: 1.2em;
+
+    }
+
+    &__list
+    {
+        list-style-type: disc;
+        font-size: 1.2vmax;
+
     }
 }
 
-.section--active {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.about__svg {
-    position: absolute;
-    bottom: -100rem;
-    left: -10rem;
-    // outline: 1px solid tomato;
-    width: 600px;
-    height: 600px;
-    opacity: 0;
-    transition: bottom 2s ease;
-    &--active {
-        bottom: 0;
-        opacity: 1;
-    }
-}
-
-.card__container {
-    display: flex;
-    margin-top: 2rem;
-    gap: 16px;
-    justify-content: space-evenly;
-}
-
-.card {
-    &__title {
-        font-size: 2.4rem;
-        text-align: center;
-        color: white;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-    &__image {
-        & > img {
-            vertical-align: baseline;
-        }
-    }
-    &__description {
-        font-size: 1.6rem;
-        text-align: center;
-        color: white;
-    }
+.thankyou
+{
+    height: 40vh;
 }

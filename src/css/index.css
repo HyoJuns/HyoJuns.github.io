@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
 html,
 body,
 div,
@@ -145,256 +146,154 @@ html {
 
 body {
   font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
   min-height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  color: #FCFFE9;
 }
 
-#header__layout {
+.header {
+  height: 100vh;
+  min-height: 700px;
+  background: linear-gradient(180deg, #2980B9, #6DD5FA, #fff);
+}
+.header__wrap {
+  width: 90vmax;
+  height: 100%;
+  margin: 0 auto;
+  outline: 1px solid #afe4bf;
+}
+.header__svg {
   width: inherit;
   height: inherit;
 }
 
-.header {
-  width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-}
-.header__background--day {
-  background: linear-gradient(180deg, #2980b9, #6dd5fa, #ffffff);
-  background-attachment: scroll;
-}
-.header__wrap {
-  width: 1440px;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-.header__title {
-  position: absolute;
-  top: 20rem;
-  left: 50%;
-  transform-origin: center;
-  transform: translate(-50%, 0) rotateX(0deg);
-  transition: all 1s cubic-bezier(0.63, 0.03, 0.95, 1.43);
-}
-.header__svg {
-  position: absolute;
-  width: 100vw;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-.header__bottom {
-  position: absolute;
-  width: 100vw;
-  height: 400px;
-  bottom: -20rem;
-  background: url("../images/dirt1.svg");
-}
-.header__line {
-  position: absolute;
-  bottom: -25rem;
-  width: 100vw;
-  height: 100px;
-  background: linear-gradient(180deg, #e9c481, #deb16c, #ccb072);
-  filter: blur(2px);
-  border-radius: 25%;
-}
-.header__ball {
-  position: absolute;
-  right: 50px;
-  bottom: -20rem;
-  z-index: 10;
-  transform: scale(1);
-  transition: transform 0.5s ease;
-}
-.header__ball:hover {
-  transform: scale(1.1);
-}
-.header__tree {
-  position: absolute;
-  left: 20px;
-  bottom: -10rem;
-  z-index: 0;
-}
-
 .section {
-  width: 100vw;
-  height: 5500px;
   min-height: 100vh;
-}
-.section__background--day {
-  background: linear-gradient(180deg, #deb16c, #6ba88e, #6ba88e, #079695, #097581, #025058);
-}
-.section__movebox {
-  transform: translateX(200px);
-  opacity: 0.2;
-  transition: all 0.5s ease;
-}
-.section__wrap {
-  width: 1440px;
-  margin: 0 auto;
-  display: grid;
-  height: inherit;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 500px repeat(3, 1fr);
-  grid-template-areas: "about about" "skill skill" "portfolio portfolio" "footer footer";
-  position: relative;
-  padding-top: 100rem;
-  gap: 90rem;
-}
-.section__wrap--page1 {
-  position: relative;
-  height: 10%;
-  outline: none;
-  grid-area: about;
-}
-@supports (display: grid) {
-  .section__wrap--page1 {
-    height: 100%;
-  }
-}
-@supports not (display: grid) {
-  .section__wrap--page1 {
-    height: 10%;
-  }
-}
-.section__wrap--page2 {
-  position: relative;
-  height: 40%;
-  outline: none;
-  grid-area: skill;
-}
-@supports (display: grid) {
-  .section__wrap--page2 {
-    height: 100%;
-  }
-}
-@supports not (display: grid) {
-  .section__wrap--page2 {
-    height: 40%;
-  }
-}
-.section__wrap--page3 {
-  position: relative;
-  height: 40%;
-  outline: none;
-  grid-area: portfolio;
-}
-@supports (display: grid) {
-  .section__wrap--page3 {
-    height: 100%;
-  }
-}
-@supports not (display: grid) {
-  .section__wrap--page3 {
-    height: 40%;
-  }
-}
-.section__wrap--page4 {
-  position: relative;
-  height: 10%;
-  outline: none;
-  grid-area: footer;
-}
-@supports (display: grid) {
-  .section__wrap--page4 {
-    height: 100%;
-  }
-}
-@supports not (display: grid) {
-  .section__wrap--page4 {
-    height: 10%;
-  }
+  background: linear-gradient(180deg, #6BA88E, #079695, #097581, #025058);
 }
 .section__title {
-  font-family: "Black Han Sans", sans-serif;
-  font-size: 6rem;
-  text-align: right;
-  text-transform: uppercase;
-  letter-spacing: 0.5rem;
-  text-shadow: 1px 1px 2px #444;
-  mix-blend-mode: screen;
-  color: #fff;
-}
-.section__title--left {
-  text-align: left;
-}
-.section__subtitle {
-  margin-top: 1.6rem;
-  font-size: 2.4rem;
-  text-align: right;
-  line-height: 1.3;
-  color: #fff;
-  font-weight: 400;
-  text-shadow: 1px 1px 2px #444;
-}
-.section__subtitle--left {
-  text-align: left;
-}
-.section__subtitle--large {
-  font-size: 3.4rem;
-}
-.section__paragraph {
-  margin-top: 1.6rem;
-  text-align: right;
-  font-size: 1.6rem;
-  color: #fff;
-  line-height: 1.5;
-  text-shadow: 1px 1px 2px #444;
-}
-.section__paragraph--left {
-  text-align: left;
-}
-.section__paragraph--bold {
-  font-weight: bold;
-}
-.section__paragraph > a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.section--active {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.about__svg {
-  position: absolute;
-  bottom: -100rem;
-  left: -10rem;
-  width: 600px;
-  height: 600px;
-  opacity: 0;
-  transition: bottom 2s ease;
-}
-.about__svg--active {
-  bottom: 0;
-  opacity: 1;
-}
-
-.card__container {
-  display: flex;
-  margin-top: 2rem;
-  gap: 16px;
-  justify-content: space-evenly;
-}
-
-.card__title {
-  font-size: 2.4rem;
+  padding-top: 2em;
   text-align: center;
-  color: white;
+  font-size: 3vmax;
+  text-transform: uppercase;
+  font-weight: 900;
   letter-spacing: 5px;
-  text-transform: uppercase;
-  font-weight: bold;
+  text-shadow: 2px 2px 20px #6BA88E, 3px 3px 10px #fff;
+  user-select: none;
 }
-.card__image > img {
-  vertical-align: baseline;
-}
-.card__description {
-  font-size: 1.6rem;
+.section__desc {
+  padding-top: 2em;
   text-align: center;
-  color: white;
+  font-size: 1.5vmax;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+.section__desc strong {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+.section__desc a {
+  color: inherit;
+  text-decoration: none;
+}
+.section__desc--left {
+  text-align: left;
+}
+
+.about, .skill, .portfolio, .thankyou {
+  height: 100vh;
+  min-height: 700px;
+}
+.about__wrap, .skill__wrap, .portfolio__wrap, .thankyou__wrap {
+  width: 90vmax;
+  height: 100%;
+  margin: 0 auto;
+  outline: 1px solid #fff;
+}
+
+.skill__container {
+  margin-top: 2em;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  outline: 1px solid yellow;
+}
+.skill__card {
+  outline: 1px solid red;
+  width: 30%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.skill__Image {
+  vertical-align: middle;
+  object-fit: cover;
+}
+.skill__desc {
+  width: 80%;
+  font-size: 1.5vmin;
+  line-height: 1.5;
+}
+
+.portfolio__mainContainer {
+  margin-top: 4rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.portfolio__main {
+  width: calc(55% - .5rem);
+  height: 400px;
+  outline: 1px solid lemonchiffon;
+}
+.portfolio__textContainer {
+  width: calc(45% - 1rem);
+  height: 400px;
+  outline: 1px solid blueviolet;
+}
+.portfolio__subContainer {
+  width: 100%;
+  height: 200px;
+  outline: brown;
+}
+.portfolio__title {
+  font-size: 1.8vmax;
+  letter-spacing: 1.5px;
+}
+.portfolio__title > strong {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+.portfolio__subtitle {
+  font-size: 1.5vmax;
+  letter-spacing: 1.5px;
+}
+.portfolio__desc {
+  width: 100%;
+  margin-top: 2em;
+  font-size: 1.5vmax;
+  line-height: 2;
+}
+.portfolio__useskils {
+  font-size: 1.2vmax;
+  margin-top: 2em;
+  margin-left: 1.2em;
+}
+.portfolio__list {
+  list-style-type: disc;
+  font-size: 1.2vmax;
+}
+
+.thankyou {
+  height: 40vh;
 }

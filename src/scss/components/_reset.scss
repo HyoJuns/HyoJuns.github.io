@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
 html,
 body,
@@ -140,8 +141,9 @@ html {
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-
+    font-weight: 300;
     min-height: 100vh;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    color : #FCFFE9;
 }
