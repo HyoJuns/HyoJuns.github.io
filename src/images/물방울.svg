@@ -1,5 +1,20 @@
-<svg width="107" height="107" viewBox="0 0 107 107" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="53.5" cy="53.5" r="51.5" fill="#C4C4C4" fill-opacity="0.25" stroke="white" stroke-width="4"/>
-<path d="M98.2853 37.0632C100.308 45.6942 104.239 56.4006 96.5848 56.4006C88.931 56.4006 93.7733 50.5286 85.3047 37.0632C76.3417 22.8117 69.0382 13.5361 76.692 13.5361C84.3458 13.5361 92.8064 27.3946 98.2853 37.0632Z" fill="white"/>
-<ellipse cx="92.1747" cy="68.9699" rx="5.15663" ry="5.15663" fill="white"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.1;}
+	.st1{fill:#DBDBDB;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g id="Freame">
+	<g class="st0">
+		<circle class="st1" cx="50" cy="50" r="45.6"/>
+	</g>
+</g>
+<g id="circle">
+	<circle class="st2" cx="76.02" cy="28.19" r="5.36"/>
+	
+		<ellipse transform="matrix(0.9046 -0.4263 0.4263 0.9046 -12.0005 40.2944)" class="st2" cx="84.02" cy="46.96" rx="3.57" ry="7.7"/>
+</g>
 </svg>

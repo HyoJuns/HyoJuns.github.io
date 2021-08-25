@@ -1,102 +1,174 @@
-// 구름 애니메이션
-let CLOUDE_ANIMATION = true;
-
 $(function () {
-    const $cloude = document.querySelectorAll(".svg__cloude");
-    const CLOUDE_MAXSIZE = $cloude.length;
+    $("a").click(function (e) {
+        e.preventDefault();
+    });
 
-    const snap = Snap(".header__svg");
+    const header = {
+        text: document.querySelector(".header__title"),
+        cloudes: document.querySelectorAll(".header__cloude"),
+        land: document.querySelector(".header__land"),
+        bitchBall: document.querySelector(".header__bitchBall"),
+        tree: document.querySelector(".header__tree"),
+        header: document.getElementById("header"),
+        toggle: true,
+    };
 
-    // 스택
-    const stack = new Stack();
+    const about = {
+        about: document.getElementById("about"),
 
-    // header
-    const $header = document.querySelector(".header");
-    const $header_title = $(".header__title");
-    const $header_ball = $(".header__ball");
-    // about
-    const $sections = $(".section__movebox");
-    const $bubble = $(".about__svg");
+        toggle: false,
+    };
 
-    // 스크롤
-    window.addEventListener(
-        "scroll",
-        function (e) {
-            scrollCheck();
-        },
-        false
-    );
-    function scrollCheck() {
-        // 스크롤 계산
-        let scroll = this.scrollY;
+    const skill = {
+        skill: document.getElementById("skill"),
+        jelly: document.querySelector(".jallyfish2"),
+        toggle: false,
+    };
+    const portfolio = {
+        portfolio: document.getElementById("portfolio"),
+        toggle: false,
+    };
+    const thankyou = {
+        thankyou: document.getElementById("thankyou"),
+        toggle: false,
+    };
 
-        let per = Math.ceil(
-            (scroll / (document.body.offsetHeight - window.innerHeight)) * 100
-        );
+    // 메뉴
+    const nav = [];
 
-        $sections.each(function (index, item) {
-            $(item).removeClass("section--active");
+    // 해파리
+    const jelly = document.querySelectorAll(".jallyfish");
+    // 물방울
+    const waterball = document.querySelectorAll(".water__bubble");
+    // 물고기
+    const fish = document.querySelector(".water__fish");
+    // 해파리 애니메이션
+    const jelly_animation = anime({
+        targets: jelly,
+        translateX: [
+            {
+                value: Math.ceil(Math.random() * 600 - 500) + 10,
+                duration: 5000,
+            },
+            {
+                value: Math.ceil(Math.random() * 400 + 10) + 10,
+                duration: 5000,
+            },
+        ],
+        translateY: [
+            {
+                value: Math.ceil(Math.random() * 400 + 10) + 10,
+                duration: 5000,
+            },
+            {
+                value: Math.ceil(Math.random() * 400 + 10) + 10,
+                duration: 5000,
+            },
+        ],
+        delay: anime.stagger(1500, { grid: [1, 9], from: "center" }),
+        endDelay: 300,
+        direction: "alternate",
+        loop: true,
+        autoplay: false,
+    });
+
+    let x = 0,
+        y = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let speed = 0.05;
+
+    for (let i = 1; i < $(".gnb__item").length + 1; i++) {
+        nav.push({
+            id: i,
+            dom: $(`.gnb__item:nth-child(${i})`),
+        });
+    }
+
+    // 사이즈
+    const headerSize = header.header.offsetHeight;
+    const aboutSize = about.about.offsetHeight;
+    const skillSize = skill.skill.offsetHeight * 2;
+    const portfolioSize = portfolio.portfolio.offsetHeight * 3;
+    const thankyouSize = portfolio.portfolio.offsetHeight * 3;
+
+    const cloudeRight = [];
+    header.cloudes.forEach((item) => {
+        cloudeRight.push(item.getBoundingClientRect().right);
+    });
+
+    window.addEventListener("scroll", function () {
+        let scroll = window.scrollY;
+
+        waterball.forEach((item, index) => {
+            item.style.bottom = `${index * 8 + scroll * 0.1}rem`;
         });
 
-        // Header 스크롤
-        if (scroll < $header.scrollHeight / 1.5) {
-            CLOUDE_ANIMATION = true;
-            _.throttle((e) => {
-                cloudeAnimation();
-            }, 50000);
+        if (header.toggle) {
+            header.text.style.top = `${30 + scroll * +0.04}%`;
+            header.land.style.bottom = `${scroll * 0.08}px`;
 
-            $header_title.css({
-                transform: `translate(-50%,${per * 10}px) rotateX(15deg)`,
-            });
-            $header_ball.css({
-                transform: `rotate(${per}deg)`,
-            });
-            console.log(per);
-            $($bubble).removeClass("about__svg--active");
-        } else if (scroll >= 1200 && scroll < 2200) {
-            CLOUDE_ANIMATION = false;
-
-            $($sections[0]).addClass("section--active");
-            $($bubble).addClass("about__svg--active");
-        } else if (scroll >= 2400 && scroll < 3400) {
-            $($sections[1]).addClass("section--active");
-        } else if (scroll >= 3600 && scroll < 4900) {
-            $($bubble).removeClass("about__svg--active");
-            $($sections[2]).addClass("section--active");
-        } else if (scroll > 5100) {
-            $($sections[3]).addClass("section--active");
+            header.tree.style.bottom = `${2 + scroll * 0.04}rem`;
+            header.tree.style.transform = `translateY(${scroll * 0.04}px)`;
+            header.bitchBall.style.transform = `rotate(${scroll * -0.15}deg)`;
+            header.bitchBall.style.right = `${2 + scroll * 0.02}rem`;
+            navChangeColor(true);
         }
-    }
-    function cloudeAnimation() {
-        if (CLOUDE_ANIMATION) {
-            $cloude.forEach((item, idx) => {
-                item.animate(
-                    {
-                        x: -200,
-                    },
-                    Math.ceil(Math.random() * (100000 - 70000)) +
-                        70000 +
-                        idx * 30000,
-                    mina.easeinout(),
-                    function () {
-                        if (CLOUDE_ANIMATION) {
-                            item.attr({
-                                x: `${
-                                    Math.ceil(Math.random() * (160 - 100)) +
-                                    100 +
-                                    idx * 100
-                                }vw`,
-                                y: Math.ceil(Math.random() * 250),
-                            });
 
-                            iscloude = false;
-                        }
-                    }
-                );
-            });
+        if (about.toggle) {
+            navChangeColor(false);
+            jelly_animation.pause();
         }
+        if (skill.toggle) {
+            jelly_animation.play();
+            skill.jelly.style.top = `${100 + scroll * 0.55}px`;
+        }
+
+        // 토글 상황
+        header.toggle = scroll >= headerSize ? false : true;
+        about.toggle = scroll >= headerSize * 0.35 ? true : false;
+        skill.toggle = scroll >= aboutSize ? true : false;
+        portfolio.toggle = scroll >= skillSize ? true : false;
+        thankyou.toggle = scroll >= portfolioSize ? true : false;
+
+        // 토글 확인
+        about.about.style.opacity = about.toggle ? 1 : 0;
+        skill.skill.style.opacity = skill.toggle * 1.5 ? 1 : 0;
+        portfolio.portfolio.style.opacity = portfolio.toggle * 1.5 ? 1 : 0;
+        thankyou.thankyou.style.opacity = thankyou.toggle ? 1 : 0;
+
+        console.log(`header : ${headerSize}, about : ${aboutSize},
+        skill : ${skillSize}, portfolio : ${portfolioSize}, thankyou : ${thankyouSize}
+        `);
+    });
+
+    function navChangeColor(islogic) {
+        const n = islogic ? "black" : "#fcffe9";
+        nav.forEach((item) => {
+            item.dom.css("color", n);
+        });
     }
 
-    cloudeAnimation();
-    scrollCheck();
+    window.addEventListener("mousemove", function (e) {
+        if (thankyou.toggle) {
+            x = e.clientX - window.innerWidth / 2;
+            y = e.clientY - window.innerHeight / 2;
+        }
+    });
+
+    function moveFish() {
+        mouseX += (x - mouseX) * speed;
+        mouseY += (y - mouseY) * speed;
+
+        if (thankyou.toggle) {
+            fish.style.transform = `translate(${-mouseX / 4}px, ${
+                -mouseY / 4
+            }px) rotate(${mouseX / 4}deg)`;
+        }
+
+        requestAnimationFrame(moveFish);
+    }
+
+    moveFish();
+    navChangeColor(true);
 });

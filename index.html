@@ -7,30 +7,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/src/images/favicon.ico">
-
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <!-- Style 불러오기 -->
     <link rel="stylesheet" href="./src/css/index.css">
 
     <!-- 스크립트 불러오기 -->
     <script src="./src/scripts/jquery-3.6.0.min.js" defer></script>
-    <script src="./src/scripts/snap.svg-min.js" defer></script>
+    <script src="src/scripts/anime.min.js" defer></script>
     <!-- Lodash 의 타이머 -->
     <script src="./src/scripts/lodash.min.js" defer></script>
-
+    <script src="src/scripts/main.js" defer></script>
 
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__wrap">
-            <svg class="header__svg">
+    <header class="header" id="header">
+        <!-- 타이틀 부분 -->
 
-            </svg>
-        </div>
+        <h1 class="header__title">
+            Web Publisher<br>
+            Portfolio
+        </h1>
+
+        <!-- 구름 -->
+        <figure class="header__cloude header__cloude--1">
+            <img src="./src/images/cloude2.svg" alt="구름">
+        </figure>
+        <figure class="header__cloude header__cloude--2">
+            <img src="./src/images/cloude2.svg" alt="구름">
+        </figure>
+        <figure class="header__cloude header__cloude--3">
+            <img src="./src/images/cloude2.svg" alt="구름">
+        </figure>
+        <figure class="header__cloude header__cloude--4">
+            <img src="./src/images/cloude2.svg" alt="구름">
+        </figure>
+        <figure class="header__cloude header__cloude--5">
+            <img src="./src/images/cloude2.svg" alt="구름">
+        </figure>
+        <figure class="header__cloude header__cloude--6">
+            <img src="./src/images/cloude2.svg" alt="구름">
+        </figure>
+
+        <!-- 땅 -->
+        <figure class="header__land">
+            <img src="./src/images/Image__land.svg" alt="모래 땅">
+        </figure>
+        <figure class="header__bitchBall">
+            <img src="./src/images/ball.svg" alt="비치볼">
+        </figure>
+        <figure class="header__tree">
+            <img src="./src/images/tree.png" alt="야자수">
+        </figure>
+        <!-- 경계부분 그라데이션 -->
+        <div class="header__gradient"></div>
     </header>
 
     <section class="section">
-        <article class="about">
+        <article class="about" id="about">
             <div class="about__wrap">
                 <h2 class="section__title">
                     About
@@ -47,22 +82,34 @@
                     전공이 웹 쪽은 아니지만 한 번 웹을 만들고 싶다는 호기심으로 시작해<br>
                     지금까지 공부하면서 재미를 느끼게 되었습니다.<br>
                 </p>
+
             </div>
+
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img class="jallyfish" src="./src/images/jellyfish.svg" alt="해파리">
+            <img src="./src/images/jallyfish2.svg" alt="해파리 엄마" class="jallyfish2">
         </article>
-        <article class="skill">
+        <article class="skill" id="skill">
             <div class="skill__wrap">
                 <h2 class="section__title">
                     Skill
                 </h2>
                 <div class="skill__container">
                     <figure class="skill__card skill__card--html">
-                        <img src="" alt="Image" class="skill__image">
+                        <img src="./src/images/html5.png" alt="html5" class="skill__image">
                         <figcaption class="skill__desc">
                             웹 표준 및 웹 접근성을 준수하여 반응형 레이아웃을 제작할 수 있습니다.
                         </figcaption>
                     </figure>
                     <figure class="skill__card skill__card--css">
-                        <img src="" alt="Image" class="skill__image">
+                        <img src="./src/images/scss.png" alt="Scss" class="skill__image">
                         <figcaption class="skill__desc">
                             CSS, SCSS 둘 다 사용 가능합니다. 그리고 저의 CSS 방법론 중에서
                             BEM 방식을 사용하고 있습니다.<br>
@@ -70,7 +117,7 @@
                         </figcaption>
                     </figure>
                     <figure class="skill__card skill__card--javascript">
-                        <img src="" alt="Image" class="skill__image">
+                        <img src="./src/images/javascript.png" alt="Image" class="skill__image">
                         <figcaption class="skill__desc">
                             자바스크립트 기본 문법을 이해하고 있습니다. <br>
                             JQuery 사용 가능합니다.
@@ -81,14 +128,24 @@
             </div>
 
         </article>
-        <article class="portfolio">
+        <article class="portfolio" id="portfolio">
             <div class="portfolio__wrap">
                 <h2 class="section__title">
                     Portfolio
                 </h2>
                 <div class="portfolio__mainContainer">
                     <figure class="portfolio__main">
-                        1
+                        <img src="./src/images/portfolio/A.jpg" alt="portfoli">
+
+                        <div class="portfolio__modal">
+                            <p class="modal__text">
+                                홈페이지 자세히 보기
+                            </p>
+                            <a href="#">홈페이지 접속</a>
+                            <a href="#" class="modal__close">
+                                X
+                            </a>
+                        </div>
                     </figure>
                     <div class="portfolio__textContainer">
                         <h2 class="portfolio__title">
@@ -98,7 +155,9 @@
                             프론트 앤드 멘토 챌린지 프로젝트
                         </h2>
                         <p class="portfolio__desc">
-                            Frontend Mentor 라는 사이트에서 자기자신이 어느정도 홈페이지를 구현 할 수 있는지를 확인하는 사이트이며, 여기에서 CHALLENGES 라는 메뉴에 들어가면 난이도 별로 어떤 홈페이지를 구현할 건지 종류별로 나와있습니다. 이 홈페이지의 난이도는 LEVEL 3 단계입니다.홈페이지에서 지급되는 이미지, 스타일 가이드 준수하여 작성했습니다.
+                            Frontend Mentor 라는 사이트에서 자기자신이 어느정도 홈페이지를 구현 할 수 있는지를 확인하는 사이트이며, 여기에서 CHALLENGES 라는 메뉴에
+                            들어가면 난이도 별로 어떤 홈페이지를 구현할 건지 종류별로 나와있습니다. 이 홈페이지의 난이도는 LEVEL 3 단계입니다.홈페이지에서 지급되는 이미지, 스타일 가이드
+                            준수하여 작성했습니다.
 
                         </p>
 
@@ -119,13 +178,26 @@
                         </ul>
                     </div>
                     <div class="portfolio__subContainer">
-                        3
+                        <div class="portfolio__flexbox">
+                            <figure class="portfolio__item">
+                                <img src="./src/images/portfolio/A.jpg" alt="프런트 앤드 멘토">
+                            </figure>
+                            <figure class="portfolio__item">
+                                <img src="./src/images/portfolio/B.jpg" alt="행복 펜션">
+                            </figure>
+                            <figure class="portfolio__item">
+                                <img src="./src/images/portfolio/C.jpg" alt="그라찌에">
+                            </figure>
+                            <figure class="portfolio__item">
+                                <img src="./src/images/portfolio/D.jpg" alt="픽사">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </article>
-        <article class="thankyou">
+        <article class="thankyou" id="thankyou">
             <div class="thankyou__wrap">
                 <h2 class="section__title">
                     Thank you
@@ -146,14 +218,51 @@
                     <a href="https://github.com/HyoJuns/HyoJuns.github.io">들어가기</a>
                 </address>
             </div>
+
+
+
         </article>
+        <figure class="water__bubble water__bubble1">
+            <img src="./src/images/water.svg" alt="water" class="bubble__first">
+        </figure>
+        <figure class="water__bubble water__bubble2">
+            <img src="./src/images/water.svg" alt="water" class="bubble__first">
+        </figure>
+        <figure class="water__bubble water__bubble3">
+            <img src="./src/images/water.svg" alt="water" class="bubble__first">
+        </figure>
+        <figure class="water__fish">
+            <img src="./src/images/fish.svg" alt="fish">
+        </figure>
     </section>
 
     <aside class="aside">
         <nav class="gnb">
-            <ul class="gnb-list">
-                <li class="gnb-item">
-
+            <ul class="gnb__list">
+                <li class="gnb__item">
+                    <a href="#header">
+                        Top
+                    </a>
+                </li>
+                <li class="gnb__item">
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+                <li class="gnb__item">
+                    <a href="#skill">
+                        Skill
+                    </a>
+                </li>
+                <li class="gnb__item">
+                    <a href="#portfolio">
+                        Portfolio
+                    </a>
+                </li>
+                <li class="gnb__item">
+                    <a href="#thankyou">
+                        Thank You
+                    </a>
                 </li>
             </ul>
         </nav>

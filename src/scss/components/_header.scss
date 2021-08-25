@@ -1,33 +1,136 @@
+$header-sky-gradient-top: #2980b9;
+$header-sky-gradient-middle: #6dd5fa;
+$header-sky-gradient-bottom: #fff;
 
-$header-gradient-top : #2980B9;
-$header-gradient-middle : #6DD5FA;
-$header-gradient-bottom : #fff;
+$header-boundary-gradient-25: #e9c481;
+$header-boundary-gradient-50: #deb16c;
+$header-boundary-gradient-75: #6ba88e;
+$header-boundary-gradient-100: #6ba88e;
 
-.header
-{
-    // 높이 설정
-    height: 100vh;
-    min-height: 700px;
-    // 배경 설정
-    background: linear-gradient(180deg, $header-gradient-top, $header-gradient-middle, $header-gradient-bottom);
+$headerWidth: 100vw;
+$headerHeight: 100vh;
 
+$headerTitle: 10vmin;
+$color: #fcffe9;
+.header {
+    width: $headerWidth;
+    height: $headerHeight;
 
-    // wrap
-    &__wrap
-    {
-        width: 90vmax;
-        height: 100%;
-        margin : 0 auto;
+    min-width: 320px;
+    min-height: 600px;
 
-        outline: 1px solid rgb(175, 228, 191);
+    // 기준
+    position: relative;
+
+    background: linear-gradient(
+        180deg,
+        $header-sky-gradient-top,
+        $header-sky-gradient-middle,
+        $header-sky-gradient-bottom
+    );
+}
+
+// Children Elements
+.header {
+    // header__cloude
+    &__cloude {
+        position: absolute;
+        opacity: 0.8;
+        right: 0%;
+
+        @for $i from 1 through 6 {
+            $topvalue: 70 * $i;
+            $rightValue: random(
+                    $limit: 1000,
+                ) +
+                200 *
+                $i;
+            &--#{$i} {
+                top: #{$topvalue}px;
+                right: #{$rightValue / 1.5}px;
+
+                animation: cloudeMove 300s linear alternate infinite;
+            }
+        }
     }
 
-    // Svg
-    &__svg
-    {
-        width: inherit;
-        height: inherit;
+    // header__land
+    &__land {
+        position: absolute;
+
+        left: 0;
+        bottom: 0;
+        z-index: 5;
+
+        width: 100%;
+
+        min-width: 800px;
+    }
+    // 비치볼
+    &__bitchBall {
+        width: 100px;
+        position: absolute;
+
+        right: 2rem;
+        bottom: 10rem;
+        z-index: 11;
+    }
+    // 나무
+    &__tree {
+        position: absolute;
+        width: 1200px;
+        left: 2rem;
+        bottom: 2rem;
+
+        transform: translateY(0) scale(1);
+        z-index: 6;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: baseline;
+        }
+    }
+    &__gradient {
+        width: 100vw;
+        height: 100px;
+
+        position: absolute;
+        bottom: -4rem;
+        background: linear-gradient(
+            180deg,
+            $header-boundary-gradient-25,
+            $header-boundary-gradient-50,
+            $header-boundary-gradient-75,
+            $header-boundary-gradient-100
+        );
+        z-index: 11;
+    }
+
+    &__title {
+        width: 80%;
+        font-size: $headerTitle;
+        font-weight: 900;
+        text-align: center;
+
+        color: $color;
+
+        user-select: none;
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+
+        text-shadow: 2px 2px 1px $color;
+        z-index: 12;
     }
 }
 
-
+@keyframes cloudeMove {
+    0% {
+    }
+    100% {
+        right: -150vw;
+    }
+}
