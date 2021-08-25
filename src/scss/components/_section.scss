@@ -121,7 +121,7 @@ $color: #fcffe9;
     }
 
     &__main {
-        width: calc(55% - 0.5rem);
+        width: calc(45% - 0.5rem);
         height: 400px;
 
         // outline: 1px solid lemonchiffon;
@@ -140,7 +140,7 @@ $color: #fcffe9;
 
     // Modal
     &__modal {
-        width: 100%;
+        width: 0%;
         height: inherit;
 
         background-color: rgba(0, 0, 0, 0.7);
@@ -153,6 +153,8 @@ $color: #fcffe9;
         align-items: center;
         flex-direction: column;
         z-index: 3;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
         & > a {
             display: inline-block;
             width: 200px;
@@ -200,7 +202,7 @@ $color: #fcffe9;
     &__item {
         width: 20%;
         height: 15rem;
-
+        cursor: pointer;
         & > img {
             width: 100%;
             height: 100%;
@@ -220,9 +222,10 @@ $color: #fcffe9;
     &__subtitle {
         font-size: 3.2rem;
         letter-spacing: 1.5px;
+        margin-top: 2rem;
     }
     &__desc {
-        width: 100%;
+        width: 80%;
         margin-top: 2em;
         font-size: 1.6rem;
         line-height: 2;
@@ -230,13 +233,14 @@ $color: #fcffe9;
 
     &__useskils {
         font-size: 2.4rem;
-        margin-top: 2em;
+        margin-top: 1em;
         margin-left: 1.2em;
     }
 
     &__list {
         list-style-type: disc;
         font-size: 1.6rem;
+        margin-top: 1rem;
     }
 }
 

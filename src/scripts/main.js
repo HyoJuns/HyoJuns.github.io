@@ -85,6 +85,21 @@ $(function () {
         });
     }
 
+    // 포트폴리오 링크
+    const $portfolioLink = {
+        modal: $(".portfolio__modal"),
+        go: $(".modal__go"),
+        close: $(".modal__close"),
+    };
+    // 포트폴리오 목록
+    const $portfolioList = $(".portfolio__item");
+    // 포트폴리오 내용
+    const $portfolioInformation = {
+        img: $(".portfolio__choice"),
+        title: $(".portfolio__title"),
+        desc: $(".portfolio__desc"),
+        useskill: $(".portfolio__list"),
+    };
     // 사이즈
     const headerSize = header.header.offsetHeight;
     const aboutSize = about.about.offsetHeight;
@@ -97,6 +112,76 @@ $(function () {
         cloudeRight.push(item.getBoundingClientRect().right);
     });
 
+    // 이동
+    $portfolioLink.go.on("click", function () {
+        location.href = $portfolioLink.go.attr("href");
+    });
+    // 취소
+    $portfolioLink.close.on("click", function () {
+        $portfolioLink.modal.css("width", `0%`);
+    });
+    // 버튼
+    $portfolioList.on("click", function () {
+        let url = $(this).children("img").attr("src");
+        const type = $(this).attr("data-type");
+        // console.log(type);
+
+        // 그림변경
+        $portfolioInformation.img.attr("src", `${url}`);
+        let msg = [];
+        switch (type) {
+            case "A":
+                msg = ["HTML", "SCSS", "JavaScript, (JQuery X)"];
+                $portfolioInformation.title.html(
+                    "<strong>01.</strong> 프론트 앤드 멘토 챌린지 프로젝트"
+                );
+                $portfolioInformation.desc.html(
+                    "Frontend Mentor 라는 사이트에서 자기자신이 어느정도 홈페이지를 구현 할 수 있는지를 확인하는 사이트이며, 여기에서 CHALLENGES 라는 메뉴에 들어가면 난이도 별로 어떤 홈페이지를 구현할 건지 종류별로 나와있습니다. 이 홈페이지의 난이도는 LEVEL 3 단계입니다.홈페이지에서 지급되는 이미지, 스타일 가이드 준수하여 작성했습니다."
+                );
+                $portfolioInformation.useskill.each(function (index, item) {
+                    $(item).text(msg[index]);
+                });
+                $portfolioLink.modal.css("width", "100%");
+                $portfolioLink.go.attr(
+                    "href",
+                    "https://hyojuns.github.io/room-homepage-master/"
+                );
+                break;
+            case "B":
+                console.log("B");
+                msg = ["HTML", "SCSS", "JavaScript, JQuery"];
+                $portfolioLink.modal.css("width", "100%");
+                $portfolioInformation.title.html(
+                    "<strong>02.</strong> 펜션 카페"
+                );
+                $portfolioInformation.desc.html(
+                    "가장 힘들어 했던 프로젝트이며, Vue 를 이용한 첫 도전인 프로젝트이며, 다시 한동안 보고싶지 않은 사이트 입니다. 가평 행복펜션을 리뉴얼 하였으며, 저에게 아주 많은 공부가 된 작품이기도 합니다."
+                );
+                $portfolioInformation.useskill.each(function (index, item) {
+                    $(item).text(msg[index]);
+                });
+                $portfolioLink.go.attr(
+                    "href",
+                    "https://hyojuns.github.io/Rentalcottage-project/"
+                );
+                break;
+            case "C":
+                msg = ["HTML", "SCSS", "JavaScript, JQuery"];
+                $portfolioInformation.title.html(
+                    "<strong>03.</strong> 그라찌에"
+                );
+                $portfolioLink.modal.css("width", "100%");
+                $portfolioInformation.desc.html(
+                    "해상도 낮을 때 만든 홈페이지를 재구성 한 프로젝트이며, 추후 바꿀 예정"
+                );
+                $portfolioInformation.useskill.each(function (index, item) {
+                    $(item).text(msg[index]);
+                });
+                break;
+        }
+    });
+
+    // 스크롤
     window.addEventListener("scroll", function () {
         let scroll = window.scrollY;
 
