@@ -1,19 +1,10 @@
-# 웹 포트폴리오 메인페이지
+# 웹 퍼블리셔 포트폴리오
 
----
+## 스크린샷
 
-## 목차
+-   이 사이트는 PC로만 제작되어 있습니다.
+-   ![이미지](./screenshots/main.png)
 
-[TOC]
+## 사이트
 
----
-
-## 이 안에 넣을 포트폴리오 페이지
-
-![이미지](.\screenshots\a.png)
-
-- 제작 중 (desktop 완료, mobile 반응형 만드는 중)
-
-- [Link]: 
-
-  
+[Live Site](https://hyojuns.github.io/)

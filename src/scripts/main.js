@@ -177,6 +177,25 @@ $(function () {
                 $portfolioInformation.useskill.each(function (index, item) {
                     $(item).text(msg[index]);
                 });
+                $portfolioLink.go.attr(
+                    "href",
+                    "https://hyojuns.github.io/Teamproject-academy-Grazie/"
+                );
+                break;
+            case "D":
+                msg = ["HTML", "CSS"];
+                $portfolioLink.modal.css("width", "100%");
+                $portfolioInformation.title.html("<strong>04.</strong> 픽사");
+                $portfolioInformation.desc.html(
+                    "처음한 팀프로젝트이며, 픽사홈페이지 따라 만든 것 추후 바꿀 예정"
+                );
+                $portfolioInformation.useskill.each(function (index, item) {
+                    $(item).text(msg[index]);
+                });
+                $portfolioLink.go.attr(
+                    "href",
+                    "https://hyojuns.github.io/Teamproject-academy-Grazie/"
+                );
                 break;
         }
     });
