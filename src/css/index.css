@@ -169,32 +169,32 @@ body {
 }
 .header__cloude--1 {
   top: 70px;
-  right: 430.6666666667px;
+  right: 523.3333333333px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--2 {
   top: 140px;
-  right: 932px;
+  right: 468.6666666667px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--3 {
   top: 210px;
-  right: 625.3333333333px;
+  right: 1047.3333333333px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--4 {
   top: 280px;
-  right: 1059.3333333333px;
+  right: 1150px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--5 {
   top: 350px;
-  right: 1233.3333333333px;
+  right: 790.6666666667px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--6 {
   top: 420px;
-  right: 827.3333333333px;
+  right: 924.6666666667px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__land {
@@ -483,13 +483,15 @@ body {
   color: #fcffe9;
   font-weight: 700;
   letter-spacing: 2px;
-  transition: color 0.4s ease;
+  transition: color 0.4s ease, text-shadow 0.5s ease;
 }
 .gnb__item > a {
   text-decoration: none;
   color: inherit;
 }
-
+.gnb__item:hover {
+  text-shadow: 2px 2px 15px #fcffe9;
+}
 .jallyfish {
   position: absolute;
   width: 50px;

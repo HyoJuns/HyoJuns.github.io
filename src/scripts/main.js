@@ -1,5 +1,5 @@
 $(function () {
-    $("a").click(function (e) {
+    $("a[href='#']").click(function (e) {
         e.preventDefault();
     });
 
@@ -104,6 +104,10 @@ $(function () {
             item.style.bottom = `${index * 8 + scroll * 0.1}rem`;
         });
 
+        nav.forEach((item) => {
+            item.dom.removeClass("gnb--active");
+        });
+
         if (header.toggle) {
             header.text.style.top = `${30 + scroll * +0.04}%`;
             header.land.style.bottom = `${scroll * 0.08}px`;
@@ -113,17 +117,26 @@ $(function () {
             header.bitchBall.style.transform = `rotate(${scroll * -0.15}deg)`;
             header.bitchBall.style.right = `${2 + scroll * 0.02}rem`;
             navChangeColor(true);
+
+            nav[0].dom.addClass("gnb--active");
         }
 
         if (about.toggle) {
             navChangeColor(false);
             jelly_animation.pause();
+            nav[1].dom.addClass("gnb--active");
         }
         if (skill.toggle) {
             jelly_animation.play();
             skill.jelly.style.top = `${100 + scroll * 0.55}px`;
+            nav[2].dom.addClass("gnb--active");
         }
-
+        if (portfolio.toggle) {
+            nav[3].dom.addClass("gnb--active");
+        }
+        if (thankyou.toggle) {
+            nav[4].dom.addClass("gnb--active");
+        }
         // 토글 상황
         header.toggle = scroll >= headerSize ? false : true;
         about.toggle = scroll >= headerSize * 0.35 ? true : false;
