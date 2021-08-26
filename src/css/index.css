@@ -169,32 +169,32 @@ body {
 }
 .header__cloude--1 {
   top: 70px;
-  right: 654px;
+  right: 318.6666666667px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--2 {
   top: 140px;
-  right: 452px;
+  right: 533.3333333333px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--3 {
   top: 210px;
-  right: 696.6666666667px;
+  right: 676px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--4 {
   top: 280px;
-  right: 568.6666666667px;
+  right: 1048px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--5 {
   top: 350px;
-  right: 1288px;
+  right: 911.3333333333px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__cloude--6 {
   top: 420px;
-  right: 1228.6666666667px;
+  right: 985.3333333333px;
   animation: cloudeMove 300s linear alternate infinite;
 }
 .header__land {
@@ -292,7 +292,7 @@ body {
 .skill,
 .portfolio,
 .thankyou {
-  height: 200vh;
+  height: 100vh;
   min-height: 700px;
   opacity: 0;
   position: relative;

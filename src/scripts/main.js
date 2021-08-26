@@ -183,18 +183,18 @@ $(function () {
                 );
                 break;
             case "D":
-                msg = ["HTML", "CSS"];
+                msg = ["HTML", "CSS", "JavaScript"];
                 $portfolioLink.modal.css("width", "100%");
-                $portfolioInformation.title.html("<strong>04.</strong> 픽사");
+                $portfolioInformation.title.html("<strong>04.</strong> 행성소개");
                 $portfolioInformation.desc.html(
-                    "처음한 팀프로젝트이며, 픽사홈페이지 따라 만든 것 추후 바꿀 예정"
+                    "심플한 랜딩페이지 , 원형 애니메이션을 돋보이도록 설정"
                 );
                 $portfolioInformation.useskill.each(function (index, item) {
                     $(item).text(msg[index]);
                 });
                 $portfolioLink.go.attr(
                     "href",
-                    "https://hyojuns.github.io/Teamproject-academy-Grazie/"
+                    "https://hyojuns.github.io/planet/"
                 );
                 break;
         }
